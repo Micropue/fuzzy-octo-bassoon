@@ -1,10 +1,11 @@
 import time
-# 初始化专注时间
-focus_time = 25  # 以分钟为单位
-# 开始专注
-start_time = time.time()
-while time.time() - start_time < focus_time * 60:
-    # 显示时钟
-    print(f"专注中...{focus_time - int((time.time() - start_time) / 60)}:00")
-# 专注时间结束
-print("专注时间结束！")
+
+def focus_timer(minutes):
+    seconds = minutes * 60
+    print(f"Focus timer set for {minutes} minutes.")
+    time.sleep(seconds)
+    print("Time's up! Your focus session has ended.")
+
+if __name__ == "__main__":
+    focus_time = int(input("Enter the duration of your focus session in minutes: "))
+    focus_timer(focus_time)
